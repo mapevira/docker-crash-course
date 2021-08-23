@@ -59,9 +59,26 @@
 				<artifactId>jib-maven-plugin</artifactId>
 				<version>1.6.1</version>
 				<configuration>
+					<from>
+						<image>openjdk:alpine</image>
+					</from>
+					<to>
+						<image>rperezvicente/${project.name}</image>
+						<tags>
+							<tag>${project.version}</tag>
+							<tag>latest</tag>
+						</tags>
+					</to>
 					<container>
-						<creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+						<jvmFlags>
+							<jvmFlag>-Xms512m</jvmFlag>
+						</jvmFlags>
+						<mainClass>com.in28minutes.rest.webservices.restfulwebservices.RestfulWebServicesApplication</mainClass>
+						<ports>
+							<port>8080</port>
+						</ports>
 					</container>
+
 				</configuration>
 				<executions>
 					<execution>
