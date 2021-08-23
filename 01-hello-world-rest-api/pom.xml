@@ -54,43 +54,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!--
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>jib-maven-plugin</artifactId>
-				<version>1.6.1</version>
-				<configuration>
-					<from>
-						<image>openjdk:alpine</image>
-					</from>
-					<to>
-						<image>rperezvicente/${project.name}</image>
-						<tags>
-							<tag>${project.version}</tag>
-							<tag>latest</tag>
-						</tags>
-					</to>
-					<container>
-						<jvmFlags>
-							<jvmFlag>-Xms512m</jvmFlag>
-						</jvmFlags>
-						<mainClass>com.in28minutes.rest.webservices.restfulwebservices.RestfulWebServicesApplication</mainClass>
-						<ports>
-							<port>8080</port>
-						</ports>
-					</container>
-
-				</configuration>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>dockerBuild</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -113,7 +76,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!--
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
@@ -132,7 +94,6 @@
 					<skipDockerInfo>true</skipDockerInfo>
 				</configuration>
 			</plugin>
-			-->
 		</plugins>
 
 	</build>
