@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  naming-service:
+  naming-server:
     image: rperezvicente/netflix-eureka-naming-server:0.0.1-SNAPSHOT
     ports:
       - "8761:8761"
@@ -14,7 +14,7 @@ services:
       - "8000:8000"
     restart: always
     depends_on: # Start the depends_on first
-      - naming-service
+      - naming-server
     networks:
       - currency-compose-network
 
@@ -27,7 +27,7 @@ services:
       CURRENCY_EXCHANGE_URI: http://currency-exchange-service:8000
     depends_on: # Start the depends_on first
       - currency-exchange-service
-      - naming-service
+      - naming-server
     networks:
       - currency-compose-network
   
