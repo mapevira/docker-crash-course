@@ -14,7 +14,7 @@ services:
       - "8000:8000"
     restart: always
     depends_on: # Start the depends_on first
-      - naming-server
+      - naming-service
     networks:
       - currency-compose-network
 
@@ -27,7 +27,7 @@ services:
       CURRENCY_EXCHANGE_URI: http://currency-exchange-service:8000
     depends_on: # Start the depends_on first
       - currency-exchange-service
-      - naming-server
+      - naming-service
     networks:
       - currency-compose-network
   
