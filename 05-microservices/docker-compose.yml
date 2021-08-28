@@ -20,8 +20,8 @@ services:
 
   currency-exchange-service:
     image: rperezvicente/currency-exchange-service:0.0.1-SNAPSHOT
-    #ports:
-    #  - "8000:8000"
+    ports:
+      - "8000:8000"
     restart: always
     depends_on: # Start the depends_on first
       - naming-server
